@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javapub.springbootmybatis.mapper.UserMapper">
+
+    <sql id="tableName">
+        `table_test_01`
+    </sql>
+    <resultMap id="BaseResultMap" type="com.javapub.springbootmybatis.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+    </resultMap>
+
+    <select id="Sel" resultType="com.javapub.springbootmybatis.entity.User">
+        select *
+        from
+        <include refid="tableName"/>
+        where id = #{id}
+    </select>
+
+    <update id="updateBatch">
+
+        update
+        <include refid="tableName"/>
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="user_status =case" suffix="end,">
+                <foreach collection="list" item="i" index="index">
+                    <if test="i.userId!=null">
+                        when user_id=#{i.userId} then #{i.userStatus}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where user_id in
+        <foreach collection="list" item="i" index="index" open="(" separator="," close=")">
+            #{i.userId}
+        </foreach>
+
+    </update>
+
+
+</mapper>
