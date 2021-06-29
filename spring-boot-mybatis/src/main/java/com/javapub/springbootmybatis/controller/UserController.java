@@ -1,8 +1,8 @@
 package com.javapub.springbootmybatis.controller;
 
-import com.wangshiyu.testcode.testcode.entity.User;
-import com.wangshiyu.testcode.testcode.entity.UserInfo;
-import com.wangshiyu.testcode.testcode.service.UserService;
+import com.javapub.springbootmybatis.entity.User;
+import com.javapub.springbootmybatis.entity.UserInfo;
+import com.javapub.springbootmybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

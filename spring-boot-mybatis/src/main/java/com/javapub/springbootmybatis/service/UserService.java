@@ -1,7 +1,7 @@
 package com.javapub.springbootmybatis.service;
 
-import com.wangshiyu.testcode.testcode.entity.User;
-import com.wangshiyu.testcode.testcode.mapper.UserMapper;
+import com.javapub.springbootmybatis.entity.User;
+import com.javapub.springbootmybatis.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
