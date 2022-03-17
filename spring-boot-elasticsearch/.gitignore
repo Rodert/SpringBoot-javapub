@@ -35,3 +35,5 @@ build/
 ### maven ###
 mvnw
 mvnw.cmd
+**/mvnw
+**/mvnw.cmd
