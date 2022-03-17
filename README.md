@@ -27,6 +27,7 @@ https://gitee.com/rodert/SpringBoot-javapub/
 3. spring-boot-docker docker打包jar
 4. spring-boot-elasticsearch springboot整合elasticsearch
 5. spring-boot-excel 解析excel
+6. spring-boot-trace 全链路日志traceId
 
 
 
