@@ -1,14 +1,24 @@
-es:
-  hosts: 101.43.201.238
+#server
+server:
+  port: 8081
+
+#es:
+#  hosts: 101.43.201.238
+#  schema: http
+#  port: 80
+#  data-index: wsy_test
+#  data-type: data
+#  timeout: 100
+#  return-num: 100
+#  concurrency-level: 20
+#  username:
+#  password:
+
+#es
+elasticsearch:
   schema: http
+  hosts: 101.43.201.238,101.43.201.238
   port: 80
-  data-index: wsy_test
-  data-type: data
-  timeout: 100
-  return-num: 100
-  concurrency-level: 20
   username:
   password:
 
-server:
-  port: 8081

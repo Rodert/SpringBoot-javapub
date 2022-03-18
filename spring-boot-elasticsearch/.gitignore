@@ -37,3 +37,6 @@ mvnw
 mvnw.cmd
 **/mvnw
 **/mvnw.cmd
+mvn*
+*/.mvn/*
+*.log

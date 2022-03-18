@@ -8,11 +8,13 @@
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.javapub.demo.elasticsearch</groupId>
     <artifactId>spring-boot-elasticsearch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-elasticsearch</name>
     <description>Demo project for Spring Boot</description>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -58,6 +60,17 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
         <!--        swagger end-->
 
         <dependency>
