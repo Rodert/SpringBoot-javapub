@@ -22,12 +22,19 @@ https://gitee.com/rodert/SpringBoot-javapub/
 
 ## 当前目录：
 
-1. spring-boot-mybatis 整合MyBatis 
-2. spring-boot-annotation 注解+AOP切面日志
-3. spring-boot-docker docker打包jar
-4. spring-boot-elasticsearch springboot整合elasticsearch
-5. spring-boot-excel 解析excel
-6. spring-boot-trace 全链路日志traceId
+1. springbootfirstdemo springboot入门初始化
+2. spring-boot-mybatis 整合MyBatis 
+3. spring-boot-annotation 注解+AOP切面日志
+4. spring-boot-docker docker打包jar
+5. spring-boot-elasticsearch springboot整合elasticsearch
+6. spring-boot-excel 解析excel
+7. spring-boot-trace 全链路日志traceId
+
+
+#### spring
+
+1. firstSpringProject spring初始化工程
+2. ssm_helloworld_web SSM整合
 
 
 
