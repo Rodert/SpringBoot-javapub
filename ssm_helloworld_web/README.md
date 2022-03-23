@@ -1558,7 +1558,7 @@ public class BookController {
 ![](https://imgkr.cn-bj.ufileos.com/3b6e4681-94be-45be-932d-b820ef95f9ee.png)
 
 
-完整代码地址：https://github.com/Rodert/JavaPub/code/ssm_helloworld_web/
+完整代码地址：https://github.com/Rodert/SpringBoot-javapub/tree/main/ssm_helloworld_web
 
 ### 最后：知识点总结
 
