@@ -6,6 +6,14 @@ import com.javapub.demo.elasticsearch.springbootelasticsearch.enums.ESType;
 
 import java.io.Serializable;
 
+/**
+ * @Author: JavaPub
+ * @License: https://github.com/Rodert/ https://gitee.com/rodert/
+ * @Contact: https://javapub.blog.csdn.net/
+ * @Date: 2022/4/5 20:56
+ * @Version: 1.0
+ * @Description:
+ */
 public class News implements Serializable {
 
     @SearchId
@@ -15,6 +23,8 @@ public class News implements Serializable {
     private String title;
     @SearchableField(type = ESType.KEYWORD)
     private String summary;
+    @SearchableField(type = ESType.BOOLEAN)
+    private Boolean isAuthority;
 
     public Long getId() {
         return id;
@@ -40,4 +50,11 @@ public class News implements Serializable {
         this.summary = summary;
     }
 
+    public Boolean getAuthority() {
+        return isAuthority;
+    }
+
+    public void setAuthority(Boolean authority) {
+        this.isAuthority = authority;
+    }
 }

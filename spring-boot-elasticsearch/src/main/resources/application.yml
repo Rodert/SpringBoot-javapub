@@ -18,7 +18,7 @@ server:
 elasticsearch:
   schema: http
   hosts: 101.43.201.238,101.43.201.238
-  port: 80
+  port: 9200
   username:
   password:
 
