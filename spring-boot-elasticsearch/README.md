@@ -51,3 +51,13 @@ https://blog.csdn.net/datuanyuan/article/details/109143900
 https://github.com/datuanyuan/search.git
 
 
+# 计划
+
+1. 构建数据的增删查改
+2. 定时采集并提取写入一部分数据
+3. word2vec 接入并做简单使用
+4. 接入全链路日志
+5. 接入监控，整合普罗米修斯
+6. 实现每秒写入大批量数据的一些优化
+7. 实现切面日志
+8. 打包docker部署
