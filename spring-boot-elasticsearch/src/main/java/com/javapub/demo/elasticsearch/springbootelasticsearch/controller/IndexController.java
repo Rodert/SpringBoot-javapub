@@ -28,7 +28,6 @@ import java.io.IOException;
  */
 @RequestMapping("index")
 @RestController
-@ResponseBody
 public class IndexController {
 
     private static final Log logger = LogFactory.getLog(IndexController.class);
@@ -44,6 +43,7 @@ public class IndexController {
      * @return
      */
     @RequestMapping("create")
+    @ResponseBody
     public Boolean createIndex(String indexName, @RequestParam(name = "aliasName", required = false) String aliasName, @RequestParam(name = "shards", required = false, defaultValue = "5") Integer shards, @RequestParam(name = "replicas", required = false, defaultValue = "1") Integer replicas) throws IOException {
         CreateIndexRequest request = new CreateIndexRequest(indexName);
         Settings.Builder builder = Settings.builder().put("index.mapper.dynamic", false).put("index.number_of_shards", shards == null ? 5 : shards).put("index.number_of_replicas", replicas == null ? 1 : replicas).put("index.max_result_window", 1000000);
