@@ -45,4 +45,9 @@ public class HelloController {
 
         return "hello! indices: " + getIndexResponse.getIndices();
     }
+
+    @RequestMapping
+    String index() throws IOException {
+        return "hello! u got the boot";
+    }
 }

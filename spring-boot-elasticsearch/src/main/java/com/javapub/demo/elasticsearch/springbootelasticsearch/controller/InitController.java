@@ -28,7 +28,7 @@ public class InitController {
         String indexName = "news-index";
         new Thread(() -> {
             try {
-                indexService.initIndex(indexName);
+                indexService.initIndex(indexName + System.currentTimeMillis());
             } catch (IOException e) {
                 e.printStackTrace();
             }

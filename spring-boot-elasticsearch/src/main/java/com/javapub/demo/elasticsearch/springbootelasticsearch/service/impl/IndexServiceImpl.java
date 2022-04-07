@@ -59,12 +59,12 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public void initIndex(String indexName) throws IOException {
-        Type type = News.class.getGenericSuperclass();
-        Type[] arguments = ((ParameterizedType) type).getActualTypeArguments();
-        Class<News> newsClazz = (Class<News>) arguments[0];
+//        Type type = News.class.getGenericSuperclass();
+//        Type[] arguments = ((ParameterizedType) type).getActualTypeArguments();
+//        Class<News> newsClazz = (Class<News>) arguments[0];
         XContentBuilder xContentBuilder = XContentFactory.jsonBuilder();
         createIndex(indexName);
-        buildMapping(indexName, newsClazz, xContentBuilder);
+        buildMapping(indexName, News.class, xContentBuilder);
         putMapping(indexName, xContentBuilder);
     }
 
