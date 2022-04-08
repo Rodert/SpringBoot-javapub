@@ -4,10 +4,12 @@ import com.javapub.demo.elasticsearch.springbootelasticsearch.annotation.Searcha
 import com.javapub.demo.elasticsearch.springbootelasticsearch.enums.ESAnalyzer;
 import com.javapub.demo.elasticsearch.springbootelasticsearch.enums.ESType;
 import com.javapub.demo.elasticsearch.springbootelasticsearch.model.vo.News;
+import com.javapub.demo.elasticsearch.springbootelasticsearch.service.DocService;
 import com.javapub.demo.elasticsearch.springbootelasticsearch.service.IndexService;
 import com.javapub.demo.elasticsearch.springbootelasticsearch.utils.DateUtil;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
+import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
@@ -58,23 +60,26 @@ public class IndexServiceImpl implements IndexService {
     private RestHighLevelClient client;
 
     @Override
-    public void initIndex(String indexName) throws IOException {
+    public Boolean initIndex(String indexName) throws IOException {
 //        Type type = News.class.getGenericSuperclass();
 //        Type[] arguments = ((ParameterizedType) type).getActualTypeArguments();
 //        Class<News> newsClazz = (Class<News>) arguments[0];
         XContentBuilder xContentBuilder = XContentFactory.jsonBuilder();
-        createIndex(indexName);
-        buildMapping(indexName, News.class, xContentBuilder);
-        putMapping(indexName, xContentBuilder);
+        if (createIndex(indexName)) {
+            buildMapping(indexName, News.class, xContentBuilder);
+            return putMapping(indexName, xContentBuilder);
+        }
+        return false;
     }
 
     @Override
-    public void createIndex(String indexName) throws IOException {
+    public Boolean createIndex(String indexName) throws IOException {
         CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
         CreateIndexResponse createIndexResponse = client.indices().create(createIndexRequest, RequestOptions.DEFAULT);
         if (logger.isDebugEnabled()) {
             logger.debug("result for create index-{} is {}", indexName, createIndexResponse.isAcknowledged());
         }
+        return createIndexResponse.isAcknowledged();
     }
 
     @Override
@@ -90,9 +95,10 @@ public class IndexServiceImpl implements IndexService {
     }
 
     @Override
-    public void putMapping(String indexName, XContentBuilder xContentBuilder) throws IOException {
+    public Boolean putMapping(String indexName, XContentBuilder xContentBuilder) throws IOException {
         PutMappingRequest putMappingRequest = new PutMappingRequest(indexName).source(xContentBuilder);
-        client.indices().putMapping(putMappingRequest, RequestOptions.DEFAULT);
+        AcknowledgedResponse acknowledgedResponse = client.indices().putMapping(putMappingRequest, RequestOptions.DEFAULT);
+        return acknowledgedResponse.isAcknowledged();
     }
 
     private static void buildFields(Field[] fields, XContentBuilder xContentBuilder) throws IOException {

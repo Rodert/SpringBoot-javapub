@@ -23,6 +23,11 @@ public class News implements Serializable {
     private String title;
     @SearchableField(type = ESType.KEYWORD)
     private String summary;
+    @SearchableField(type = ESType.TEXT)
+    private String content;
+    /**
+     * 是否认证新闻
+     */
     @SearchableField(type = ESType.BOOLEAN)
     private Boolean isAuthority;
 
@@ -48,6 +53,14 @@ public class News implements Serializable {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Boolean getAuthority() {
