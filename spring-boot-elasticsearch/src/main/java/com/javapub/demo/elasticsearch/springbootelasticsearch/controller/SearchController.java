@@ -1,8 +1,13 @@
 package com.javapub.demo.elasticsearch.springbootelasticsearch.controller;
 
+import com.javapub.demo.elasticsearch.springbootelasticsearch.service.SearchService;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 /**
  * @Author: JavaPub
@@ -17,10 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("search")
 public class SearchController {
 
-    @RequestMapping("news")
-    public String searchNews(String keyword) {
+    @Autowired
+    private SearchService searchService;
 
-        return "";
+    @RequestMapping("news")
+    public String searchNews(String keyword, String indexName) throws IOException {
+        return searchService.search(keyword, indexName);
     }
 
 }
