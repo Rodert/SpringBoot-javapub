@@ -2,6 +2,7 @@ package com.javapub.demo.elasticsearch.springbootelasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @Author: JavaPub
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version: 1.0
  * @Description:
  */
+@EnableScheduling
 @SpringBootApplication
 public class SpringBootElasticsearchApplication {
 

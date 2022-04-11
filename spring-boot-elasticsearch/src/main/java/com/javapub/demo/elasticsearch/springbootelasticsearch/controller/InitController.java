@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,9 @@ public class InitController {
 
     private static final Logger logger = LoggerFactory.getLogger(InitController.class);
 
+    @Value("${custom.index}")
+    private String indexName;
+
     @Autowired
     private IndexService indexService;
     @Autowired
@@ -46,7 +50,7 @@ public class InitController {
         if (!type.equals("news")) {
             return "非预设 news";
         }
-        String indexName = "news-index" + getNowDate();
+//        String indexName = "news-index" + getNowDate();
         new Thread(() -> {
             try {
                 Boolean aBoolean = indexService.initIndex(indexName);
@@ -74,7 +78,7 @@ public class InitController {
      */
     private JSONArray getInitNewsData() throws IOException {
         JSONArray jsonArray = new JSONArray();
-        Resource resource = new ClassPathResource("static/data/news.json");
+        Resource resource = new ClassPathResource("static/data/news.txt");
         String path = resource.getFile().getPath();
         List<String> stringList = FileUtils.readLines(new File(path), StandardCharsets.UTF_8);
         stringList.forEach(s -> {

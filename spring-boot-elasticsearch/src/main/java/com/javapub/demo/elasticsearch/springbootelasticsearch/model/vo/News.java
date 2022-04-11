@@ -25,6 +25,8 @@ public class News implements Serializable {
     private String summary;
     @SearchableField(type = ESType.TEXT)
     private String content;
+    @SearchableField(type = ESType.KEYWORD)
+    private String url;
     /**
      * 是否认证新闻
      */
@@ -69,5 +71,13 @@ public class News implements Serializable {
 
     public void setAuthority(Boolean authority) {
         this.isAuthority = authority;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -21,4 +21,5 @@ elasticsearch:
   port: 9200
   username:
   password:
-
+custom:
+  index: news-index

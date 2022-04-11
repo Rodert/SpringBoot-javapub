@@ -27,6 +27,12 @@
 
 # 测试
 
+## docker构建elasticsearch
+
+
+
+## 启动&初始化
+
 1. 启动
 2. 请求 初始化索引、导入测试数据
    1. http://127.0.0.1:8081/internal/init?type=news

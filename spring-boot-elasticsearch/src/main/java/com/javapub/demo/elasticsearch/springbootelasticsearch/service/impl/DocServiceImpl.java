@@ -2,7 +2,9 @@ package com.javapub.demo.elasticsearch.springbootelasticsearch.service.impl;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.javapub.demo.elasticsearch.springbootelasticsearch.model.vo.News;
 import com.javapub.demo.elasticsearch.springbootelasticsearch.service.DocService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -15,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @Service
 public class DocServiceImpl implements DocService {
@@ -29,10 +32,19 @@ public class DocServiceImpl implements DocService {
         BulkRequest bulkRequest = new BulkRequest();
         for (int i = 0; i < executedDataJsonArray.size(); i++) {
             JSONObject jsonObject = executedDataJsonArray.getJSONObject(i);
-            bulkRequest.add(new IndexRequest(indexName).source(jsonObject.toJSONString(), XContentType.JSON));
+            bulkRequest.add(new IndexRequest(indexName).id(getId(jsonObject)).source(jsonObject.toJSONString(), XContentType.JSON));
         }
         BulkResponse bulkResponse = client.bulk(bulkRequest, RequestOptions.DEFAULT);
         logger.info("{}", bulkResponse);
         return true;
+    }
+
+    private String getId(JSONObject jsonObject) {
+        News news = JSONObject.parseObject(jsonObject.toJSONString(), News.class);
+        String id = news.getUrl();
+        if (id == null || id.equals("")) {
+            id = String.valueOf(UUID.randomUUID());
+        }
+        return DigestUtils.md5Hex(id);
     }
 }
