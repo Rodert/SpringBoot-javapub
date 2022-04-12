@@ -19,13 +19,12 @@ SpringBoot2.x 从入门到实战 This is the repository that contains many Sprin
 	</p>
 </div>
 
-
 ---
 
 ## 当前目录：
 
 1. springbootfirstdemo 【springboot入门初始化】
-2. spring-boot-mybatis 【整合MyBatis】
+2. [spring-boot-mybatis 【整合MyBatis】](spring-boot-mybatis)
 3. spring-boot-annotation 【注解+AOP切面日志】
 4. spring-boot-docker 【docker打包jar】
 5. spring-boot-elasticsearch 【springboot整合elasticsearch】
