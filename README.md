@@ -12,10 +12,12 @@ SpringBoot2.x 从入门到实战 This is the repository that contains many Sprin
 
 ## 仓库地址：
 
-https://github.com/Rodert/SpringBoot-javapub/
-
-https://gitee.com/rodert/SpringBoot-javapub/
-
+<div align="center">
+	<p>
+		<a href="https://github.com/Rodert/SpringBoot-javapub/">GitHub</a> | 
+		<a href="https://gitee.com/rodert/SpringBoot-javapub">Gitee</a>
+	</p>
+</div>
 
 
 ---
