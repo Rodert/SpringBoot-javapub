@@ -1,11 +1,44 @@
-图文并茂
+`图文并茂，新手入门教程，建议收藏`
+
+SpringBoot2.x整合Prometheus+Grafana【附源码+视频】
+
+附源码+视频
+
+[GitHub](https://github.com/Rodert/spring-boot-prometheus-grafana) | [Gitee](https://gitee.com/rodert/spring-boot-prometheus-grafana)
+
+文档：
+
+[toc]
 
 # 工程简介
 
+总体框架图
 
-SpringBoot2.x整合Prometheus+Grafana【附源码】
+![image](https://tva2.sinaimg.cn/large/007F3CC8ly1h38ro8l0nsj30tc0kltgj.jpg)
 
-附源码+视频
+## 简介
+
+### Prometheus
+
+Prometheus，是一个开源的系统监控和告警的工具包，其采用Pull方式采集时间序列的度量数据（也支持push方式），通过Http协议传输。它的工作方式是被监控的服务需要公开一个Prometheus端点，这端点是一个HTTP接口，该接口公开了度量的列表和当前的值，然后Prometheus应用从此接口定时拉取数据，一般可以存放在时序数据库中，然后通过可视化的Dashboard(e.g.Grafana)进行数据展示。
+
+**支持的prometheus metrics**
+
+Counter，Gauge，Histogram，Summary，untyped等等。需要注意的是counter只能增不能减，适用于服务请求量，用户访问数等统计，但是如果需要统计有增有减的指标需要用Gauge。
+
+**exporter**
+
+支持的 exporter 很多，可以方便的监控很多应用，同时也可以自定义开发非官方提供的exporter。
+
+### grafana
+
+grafana，是一个开源的dashboard展示工具，可以支持很多主流数据源，包括时序性的和非时序性的。其提供的展示配置以及可扩展性能满足绝大部分时间序列数据展示需求，是一个比较优秀的工具。
+
+**支持的数据源**
+ 
+prometheus，inflexdb，elasticsearch，mysql，postgreSQL，openTSDB等，更多数据源：<https://grafana.com/grafana/plugins/?type=datasource>
+
+---
 
 ## SpringBoot工程初始化
 
@@ -182,7 +215,12 @@ jvm_memory_used_bytes
 
 ![image](https://tvax1.sinaimg.cn/large/007F3CC8ly1h38qfbxz0tj31h90s2dta.jpg)
 
-源码地址：https://github.com/Rodert/SpringBoot-javapub
+---
+
+源码地址：https://github.com/Rodert/spring-boot-prometheus-grafana
+
+视频地址：https://space.bilibili.com/404747369
+
 
 # 延伸阅读
 
@@ -192,7 +230,7 @@ jvm_memory_used_bytes
 4. [SpringBoot快速整合Excel](https://gitee.com/rodert/SpringBoot-javapub/tree/main/spring-boot-excel)
 5. [SpringBoot整合MyBatis-支持批量更新](https://gitee.com/rodert/SpringBoot-javapub/tree/main/spring-boot-mybatis)
 6. [SpringBoot实现链路追踪spring-boot-trace](https://gitee.com/rodert/SpringBoot-javapub/tree/main/spring-boot-trace)
-
+7. [SpringBoot2.x整合Prometheus+Grafana【附源码】](https://gitee.com/rodert/spring-boot-prometheus-grafana)
 
 ## 中级篇
 
