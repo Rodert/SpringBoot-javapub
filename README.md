@@ -24,12 +24,14 @@ SpringBoot2.x 从入门到实战 This is the repository that contains many Sprin
 ## 当前目录：
 
 1. [springbootfirstdemo 【springboot入门初始化】](springbootfirstdemo)
-2. [spring-boot-mybatis 【整合MyBatis】](spring-boot-mybatis)
-3. [spring-boot-annotation 【注解+AOP切面日志】](spring-boot-annotation )
-4. [spring-boot-docker 【docker打包jar】](spring-boot-docker)
-5. [spring-boot-elasticsearch 【springboot整合elasticsearch】](spring-boot-elasticsearch)
-6. [spring-boot-excel 【解析excel】](spring-boot-excel)
-7. [spring-boot-trace 【全链路日志traceId】](spring-boot-trace)
+2. [spring-boot整合MyBatis批量更新](spring-boot-mybatis)
+3. [spring-boot自定义注解+AOP切面日志](spring-boot-annotation )
+4. [spring-boot整合docker打包jar](spring-boot-docker)
+5. [spring-boot 整合elasticsearch手脚架](spring-boot-elasticsearch)
+6. [spring-boot整合解析excel](spring-boot-excel)
+7. [spring-boot实现全链路日志traceId](spring-boot-trace)
+8. [springboot整合flowable工作流](https://github.com/Rodert/springboot-flowable)   [GitHub](https://github.com/Rodert/springboot-flowable) | [Gitee](https://gitee.com/rodert/springboot-flowable)
+9. 
 
 
 #### spring
