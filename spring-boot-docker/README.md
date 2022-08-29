@@ -140,3 +140,30 @@ curl -sSL https://get.daocloud.io/docker | sh
 公众号: JavaPub 回复： **仓库地址**
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/54ec6ca216984f7d9fc74b9bad8e3240.png)
+
+
+---
+
+---
+
+---
+
+# springboot部署到k8s
+
+主要有这么几个步骤：
+
+1. 完成应用代码的编写
+
+2. 把程序打包成容器镜像
+
+3. 使用上一步打包的镜像，创建应用的Pod
+
+4. 用 Deployment 调度应用
+
+5. 使用 Service 暴露应用
+
+6. 通过 Ingress 代理应用
+
+好了，这六步大家一定要记住，下面我们逐一展开，详细说说。
+
+
