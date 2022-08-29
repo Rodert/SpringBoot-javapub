@@ -27,6 +27,28 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+<!--        &lt;!&ndash; spark-core spark核心&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.spark</groupId>-->
+<!--            <artifactId>spark-core_2.12</artifactId>-->
+<!--            <version>2.4.8</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; spark-streaming spark流计算&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.spark</groupId>-->
+<!--            <artifactId>spark-streaming_2.12</artifactId>-->
+<!--            <version>2.4.8</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.12</artifactId>
+            <version>3.1.2</version>
+            <!--            <scope>provided</scope>-->
+        </dependency>
+
+
     </dependencies>
 
     <build>
