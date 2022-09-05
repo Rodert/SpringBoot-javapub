@@ -10,5 +10,15 @@ public class WebController {
     public String hello() {
         return "hello world";
     }
+
+    @RequestMapping("/admin/hello")
+    public String adminHello() {
+        return "hello admin";
+    }
+
+    @RequestMapping("/user/hello")
+    public String userHello() {
+        return "hello user";
+    }
 }
 
